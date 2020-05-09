@@ -2,4 +2,145 @@
 @tailwind base;
 @tailwind components;
 /*! purgecss end ignore */
+
+h1,
+h2,
+h3,
+h4,
+p {
+  hyphens: auto;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+#flag {
+  background-image: linear-gradient(to bottom, #336699 0%, transparent 100%);
+}
+
+#signature-content article > p:first-of-type:first-letter {
+  float: left;
+  font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
+  font-size: 4rem;
+  line-height: 0.7em;
+  margin: 5px 10px 0 0;
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: white;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+/* Underline to Center */
+.hvr-underline-to-center {
+  display: inline;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-to-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.underline-black:before {
+  background: black;
+}
+.hvr-underline-to-center:hover:before,
+.hvr-underline-to-center:focus:before,
+.hvr-underline-to-center:active:before {
+  left: 51%;
+  right: 51%;
+}
+
+code {
+  background: #f6f6f6;
+  font-family: Monaco, "Lucida Console", "Bitstream Vera Sans Mono", Courier,
+    monospace;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+}
+
+pre {
+  background: #f6f6f6;
+  font-family: Monaco, "Lucida Console", "Bitstream Vera Sans Mono", Courier,
+    monospace;
+  font-size: 0.75rem;
+  padding: 25px;
+  overflow: auto;
+  width: auto;
+  line-height: 1.4em;
+}
+
+#toc ul {
+  list-style-type: decimal;
+  font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
+  margin: 5px 0;
+}
+
+#toc ul li ul {
+  font-size: 0.65rem;
+  list-style-type: lower-alpha;
+}
+#toc ul li {
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-left: 16px;
+  padding-left: 10px;
+}
+
+#toc ul li a {
+  border-bottom: 1px solid #222;
+  color: #222;
+}
+
+#toc ul li ul li {
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+
+#toc ul li ul li a {
+  border-bottom: 1px solid #dedede;
+  color: #222;
+}
+
 @tailwind utilities;
