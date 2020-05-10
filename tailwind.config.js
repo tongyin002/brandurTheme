@@ -10,6 +10,7 @@ module.exports = {
         divider: "#dedede",
       },
       spacing: {
+        px2: "2px",
         px3: "3px",
         px5: "5px",
         px8: "8px",
@@ -25,6 +26,7 @@ module.exports = {
         px80: "80px",
         px150: "150px",
         px100: "100px",
+        px200: "200px",
       },
       width: {
         "21/25": "84%",
@@ -35,6 +37,7 @@ module.exports = {
         title: "1.5em",
         info: "1.6em",
         outer: "1.7em",
+        mdtext: "1.75em",
         navli: "1.8em",
         para: "1.9em",
       },
@@ -54,6 +57,7 @@ module.exports = {
         older: "0.8rem",
         hook: "0.85rem",
         strong: "0.95rem",
+        mdtext: "1.04rem",
         head3: "1.1rem",
         index: "1.2rem",
         title: "4.5rem",
@@ -67,6 +71,7 @@ module.exports = {
         px300: "300px",
         px550: "550px",
         px680: "680px",
+        px1000: "1000px",
         px1500: "1500px",
         px1580: "1580px",
         xxl: "1920px",
@@ -91,6 +96,7 @@ module.exports = {
       },
       inset: {
         px50: "50px",
+        npx120: "-120px",
       },
     },
   },

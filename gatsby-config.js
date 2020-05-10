@@ -88,7 +88,8 @@ module.exports = {
                   "text-2xl tracking-stight font-helvetica mt-px30 -mb-px10",
                 "heading[depth=3]":
                   "text-head3 tracking-stight font-helvetica mt-px30 -mb-px15 font-semibold",
-                paragraph: "my-px20 text-base leading-outer text-parag",
+                paragraph:
+                  "my-px20 text-base leading-outer text-parag md:text-mdtext md:leading-mdtext",
                 footnoteReference: "hvr-underline-to-center underline-black",
                 listItem: "text-base leading-outer mb-px10 ml-px40 pl-px5",
                 "list[ordered=false]": "my-px25 list-disc",
@@ -99,10 +100,10 @@ module.exports = {
           {
             resolve: `gatsby-remark-figure-caption`,
             options: {
-              figureClassName: "my-px40 overflow-visible max-w-full",
+              figureClassName: "my-px40 overflow-visible max-w-full relative",
               imageClassName: "overflow-auto",
               captionClassName:
-                "left-0 text-center top-0 w-auto text-hook italic leading-title pt-px12",
+                "left-0 text-center top-0 w-auto text-hook italic leading-title pt-px12 lg:absolute lg:top-0 lg:left-npx120 lg:w-px100 lg:text-right",
             },
           },
         ],

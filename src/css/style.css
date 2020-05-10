@@ -167,6 +167,7 @@ footnote definition style
 .footnotes {
   margin: 30px auto !important;
   width: 90%;
+  border-bottom: 1px solid #dedede;
 }
 
 .footnotes p {
@@ -185,6 +186,16 @@ footnote definition style
 
 .footnotes code {
   font-size: 0.65rem !important;
+}
+
+@screen md {
+  #signature-content article > p:first-of-type:first-letter {
+    font-size: 6.25rem;
+  }
+
+  h1 {
+    hyphens: none;
+  }
 }
 
 @tailwind utilities;
