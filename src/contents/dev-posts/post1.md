@@ -80,7 +80,7 @@ network is just the leftmost bit. 255 in binary is `1111 1111`, so the network i
 consecutive `1`s.
 
 [comment]: <> (!fig src="/assets/images/sortsupport-inet/inet-cidr-anatomy.svg" caption="The anatomy of inet and cidr values.")
-![inet-cidr-anatomy](../assets/images/sortsupport-inet/inet-cidr-anatomy.svg)_The anatomy of inet and cidr values._
+![inet-cidr-anatomy](./images/post1/inet-cidr-anatomy.svg)_The anatomy of inet and cidr values._
 
 The difference between `inet` and `cidr` is that `inet`
 allows a values outside of the netmasked bits. The value
