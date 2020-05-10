@@ -12,6 +12,7 @@ module.exports = {
       spacing: {
         px5: "5px",
         px10: "10px",
+        px12: "12px",
         px15: "15px",
         px40: "40px",
         px50: "50px",
@@ -25,6 +26,7 @@ module.exports = {
         para: "1.9em",
         block: "1.4em",
         title: "1.5em",
+        info: "1.6em",
         navul: "1em",
         navli: "1.8em",
       },

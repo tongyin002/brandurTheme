@@ -46,14 +46,35 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        commonmark: true,
-        footnotes: true,
         plugins: [
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               icon: false,
               elements: [`h2`, `h3`],
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: { sh: "bash", js: "javascript", ts: "typescript" },
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
             },
           },
           {
@@ -63,15 +84,25 @@ module.exports = {
                 linkReference: "hvr-underline-to-center underline-black",
                 link: "hvr-underline-to-center underline-black",
                 strong: "text-strong font-helvetica font-bold",
-                listItem: "text-base leading-outer mb-px10 ml-px40 pl-px5",
-                "list[ordered=false]": "my-px25 list-disc",
-                "list[ordered=true]": "my-px25 list-decimal",
                 "heading[depth=2]":
                   "text-2xl tracking-stight font-helvetica mt-px30 -mb-px10",
                 "heading[depth=3]":
                   "text-head3 tracking-stight font-helvetica mt-px30 -mb-px15 font-semibold",
                 paragraph: "my-px20 text-base leading-outer text-parag",
+                footnoteReference: "hvr-underline-to-center underline-black",
+                listItem: "text-base leading-outer mb-px10 ml-px40 pl-px5",
+                "list[ordered=false]": "my-px25 list-disc",
+                "list[ordered=true]": "my-px25 list-decimal",
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: {
+              figureClassName: "my-px40 overflow-visible max-w-full",
+              imageClassName: "overflow-auto",
+              captionClassName:
+                "left-0 text-center top-0 w-auto text-hook italic leading-title pt-px12",
             },
           },
         ],

@@ -8,7 +8,7 @@ tags: ["postgres"]
 
 A few months ago, I wrote about [how SortSupport works in
 Postgres](/sortsupport) to vastly speed up sorting on
-large data types [1] like `numeric` or `text`, and
+large data types [^1] like `numeric` or `text`, and
 `varchar`. It works by generating **abbreviated keys** for
 values that are representative of them for purposes of
 sorting, but which fit nicely into the pointer-sized value
@@ -79,8 +79,7 @@ example, if I have the value `255.255.255.255/1`, the
 network is just the leftmost bit. 255 in binary is `1111 1111`, so the network is the bit `1` and the subnet is 31
 consecutive `1`s.
 
-[comment]: <> (!fig src="/assets/images/sortsupport-inet/inet-cidr-anatomy.svg" caption="The anatomy of inet and cidr values.")
-![inet-cidr-anatomy](./images/post1/inet-cidr-anatomy.svg)_The anatomy of inet and cidr values._
+![The anatomy of inet and cidr values.](./images/post1/inet-cidr-anatomy.svg)
 
 The difference between `inet` and `cidr` is that `inet`
 allows a values outside of the netmasked bits. The value
@@ -154,7 +153,7 @@ before all IPv6 values. Since there's only two IP families,
 so we'll reserve the most significant bit of our key to
 represent a value's family. 0 for IPv4 and 1 for IPv6.
 
-!fig src="/assets/images/sortsupport-inet/ip-family.svg" caption="One bit reserved for IP family."
+![One bit reserved for IP family.](./images/post1/ip-family.svg)
 
 It might seem short-sighted that we're assuming that only
 two IP families will ever exist, but luckily abbreviated
@@ -194,7 +193,7 @@ filled entirely with network. An IPv4 value is only 32
 bits, but that's still more space than we have left on a
 32-bit machine, so again, we'll pack in 31 of them.
 
-!fig src="/assets/images/sortsupport-inet/network-bits.svg" caption="Number of bits available to store network per datum size and IP family."
+![Number of bits available to store network per datum size and IP family.](./images/post1/network-bits.svg)
 
 But there is one case where we have some space left over:
 IPv4 on a 64-bit machine. Even after storing all 32
@@ -210,7 +209,7 @@ network (32 bits) -- are equal. That leaves us with 31
 bits (64 - 33) left to work with, and lets us move onto
 the next comparison rule -- netmask size. The largest
 possible netmask size for an IPv4 address is 32, which
-conveniently fits into only 6 bits (`32 = 10 0000`) [2].
+conveniently fits into only 6 bits (`32 = 10 0000`) [^2].
 
 After adding netmask size to the datum we're left with 25
 bits (31 - 6), which we can use for the next sorting rule
@@ -223,12 +222,12 @@ entirety of the subnet into the datum.
 
 With subnet covered, we've used up all the available key
 bits, but also managed to cover every sorting rule -- with
-most [3] real-world data, Postgres should be able to sort
+most [^3] real-world data, Postgres should be able to sort
 almost entirely with abbreviated keys without falling back
 to authoritative comparison. The final key design looks
 like this:
 
-!fig src="/assets/images/sortsupport-inet/key-design.svg" caption="The design of abbreviated keys for inet and cidr."
+![The design of abbreviated keys for inet and cidr.](./images/post1/key-design.svg)
 
 ## Bit gymnastics in C
 
@@ -475,18 +474,11 @@ Thanks to Peter Geoghegan for seeding the idea for this
 patch, as well as for advice and very thorough
 testing/review, and Edmund Horner for review.
 
-[1] Technically, pass-by-reference types. Generally those
-that can't fit their entire value in a datum.
+[^1]: Technically, pass-by-reference types. Generally those that can't fit their entire value in a datum.
 
-[2] I originally thought that by subtracting one from 32 I
-could fit netmask size into only 5 bits (31 = `1 1111`), but that's not possible because 0-bit netmasks
-are allowed and we therefore need to be able to
-represent the entire range of 0 to 32. For example,
-`1.2.3.4/0` is a legal value in Postgres.
+[^2]: I originally thought that by subtracting one from 32 I could fit netmask size into only 5 bits (31 = `1 1111`), but that's not possible because 0-bit netmasks are allowed and we therefore need to be able to represent the entire range of 0 to 32. For example, `1.2.3.4/0` is a legal value in Postgres.
 
-[3] Authoritative comparison will still be needed in the
-case of equal network values and values with short
-networks (`/6` or less) that share many leading bits.
+[^3]: Authoritative comparison will still be needed in the case of equal network values and values with short networks (`/6` or less) that share many leading bits.
 
 [inet]: https://github.com/postgres/postgres/blob/12afc7145c03c212f26fea3a99e016da6a1c919c/src/include/utils/inet.h:23
 [patch]: https://www.postgresql.org/message-id/CABR_9B-PQ8o2MZNJ88wo6r-NxW2EFG70M96Wmcgf99G6HUQ3sw%40mail.gmail.com

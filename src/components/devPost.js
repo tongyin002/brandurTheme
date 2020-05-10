@@ -23,6 +23,7 @@ export default function devPost({ title, content, toc }) {
           className="max-w-full"
           dangerouslySetInnerHTML={{ __html: content }}
         ></article>
+        <div id="divider-short" className="mx-auto my-px30 border-b w-4/5" />
       </div>
     </section>
   );
