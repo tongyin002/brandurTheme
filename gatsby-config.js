@@ -47,6 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        gfm: true,
         plugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
@@ -95,6 +96,8 @@ module.exports = {
                 listItem: "text-base leading-outer mb-px10 ml-px40 pl-px5",
                 "list[ordered=false]": "my-px25 list-disc",
                 "list[ordered=true]": "my-px25 list-decimal",
+                blockquote:
+                  "border-l-8 font-helvetica text-gray-300 italic ml-px15 pl-px15 my-px30",
               },
             },
           },
