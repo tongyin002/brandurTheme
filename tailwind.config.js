@@ -76,6 +76,7 @@ module.exports = {
         px300: "300px",
         px550: "550px",
         px680: "680px",
+        px700: "700px",
         px1000: "1000px",
         px1500: "1500px",
         px1580: "1580px",
@@ -87,6 +88,7 @@ module.exports = {
       letterSpacing: {
         normal: "normal",
         xtight: "-6px",
+        xstight: "-4px",
         stight: "-1px",
         sstirhg: "-0.5px",
       },

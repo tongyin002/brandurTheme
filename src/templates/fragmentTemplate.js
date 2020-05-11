@@ -3,14 +3,13 @@ import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import Writing from "./writing";
-import DevPost from "../components/devPost";
+import Fragment from "../components/fragment";
 
-export default function PostTemplate({ data }) {
+export default function FragmentTemplate({ data }) {
   const post = data.markdownRemark;
   const props = {
     content: post.html,
     title: post.frontmatter.title,
-    toc: post.tableOfContents,
   };
 
   return (
@@ -25,14 +24,14 @@ export default function PostTemplate({ data }) {
           rel="stylesheet"
         ></link>
       </Helmet>
-      <Writing post={post} isArticle={true}>
-        <DevPost {...props}></DevPost>
+      <Writing post={post} isArticle={false}>
+        <Fragment {...props}></Fragment>
       </Writing>
     </>
   );
 }
 
-PostTemplate.propTypes = {
+FragmentTemplate.propTypes = {
   data: PropTypes.object,
 };
 
