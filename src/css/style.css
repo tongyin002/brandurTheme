@@ -19,14 +19,6 @@ body {
   background-image: linear-gradient(to bottom, #336699 0%, transparent 100%);
 }
 
-#signature-content article > p:first-of-type:first-letter {
-  float: left;
-  font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
-  font-size: 4rem;
-  line-height: 0.7em;
-  margin: 5px 10px 0 0;
-}
-
 /* Underline From Center */
 .hvr-underline-from-center {
   display: inline-block;
@@ -127,41 +119,6 @@ code {
 }
 
 /*
-Tale of Content styling
-*/
-#toc ul {
-  list-style-type: decimal;
-  font-family: "helvetica neue", helvetica, arial, geneva, sans-serif;
-  margin: 5px 0;
-}
-
-#toc ul li ul {
-  font-size: 0.65rem;
-  list-style-type: lower-alpha;
-}
-#toc ul li {
-  margin-bottom: 8px;
-  margin-top: 8px;
-  margin-left: 16px;
-  padding-left: 10px;
-}
-
-#toc ul li a {
-  border-bottom: 1px solid #222;
-  color: #222;
-}
-
-#toc ul li ul li {
-  margin-bottom: 7px;
-  margin-top: 7px;
-}
-
-#toc ul li ul li a {
-  border-bottom: 1px solid #dedede;
-  color: #222;
-}
-
-/*
 footnote definition style
 */
 .footnotes {
@@ -200,16 +157,6 @@ figure caption styling
   font-size: 0.85rem;
   padding-top: 12px;
   line-height: 1.5em;
-}
-
-@screen md {
-  #signature-content article > p:first-of-type:first-letter {
-    font-size: 6.25rem;
-  }
-
-  h1 {
-    hyphens: none;
-  }
 }
 
 @screen lg {

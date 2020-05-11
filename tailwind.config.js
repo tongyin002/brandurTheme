@@ -13,10 +13,12 @@ module.exports = {
         px2: "2px",
         px3: "3px",
         px5: "5px",
+        px7: "7px",
         px8: "8px",
         px10: "10px",
         px12: "12px",
         px15: "15px",
+        px16: "16px",
         px20: "20px",
         px25: "25px",
         px30: "30px",
@@ -32,6 +34,7 @@ module.exports = {
         "21/25": "84%",
       },
       lineHeight: {
+        firstLetter: "0.7em",
         navul: "1em",
         block: "1.4em",
         title: "1.5em",
@@ -60,8 +63,10 @@ module.exports = {
         mdtext: "1.04rem",
         head3: "1.1rem",
         index: "1.2rem",
+        firstLetter: "4rem",
         title: "4.5rem",
         xtitle: "5.75rem",
+        firstLetterLg: "6.25rem",
       },
       margin: {
         "3/50": "6%",
@@ -88,15 +93,15 @@ module.exports = {
       fontWeight: {
         bold: "bold",
       },
-      borderColor: {
-        divider: "#1a1a1a",
-      },
       flexShrink: {
         "3": 3,
       },
       inset: {
         px50: "50px",
         npx120: "-120px",
+      },
+      listStyleType: {
+        loalpha: "lower-alpha",
       },
     },
   },

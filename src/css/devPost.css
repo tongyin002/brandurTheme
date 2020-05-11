@@ -1,0 +1,40 @@
+#signature-content article > p:first-of-type:first-letter {
+  @apply float-left font-helvetica text-firstLetter leading-firstLetter mt-px5 mr-px10;
+}
+
+/*
+Tale of Content styling
+*/
+#toc ul {
+  @apply list-decimal font-helvetica my-px5 mx-0;
+}
+
+#toc ul li ul {
+  @apply text-nav list-loalpha;
+}
+
+#toc ul li {
+  @apply my-px8 ml-px16 pl-px10;
+}
+
+#toc ul li a {
+  @apply border-b border-parag text-parag;
+}
+
+#toc ul li ul li {
+  @apply my-px7;
+}
+
+#toc ul li ul li a {
+  @apply border-b border-divider text-parag;
+}
+
+@screen md {
+  #signature-content article > p:first-of-type:first-letter {
+    @apply text-firstLetterLg;
+  }
+
+  h1 {
+    hyphens: none;
+  }
+}
