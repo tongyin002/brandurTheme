@@ -1,10 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import indexImg from "../images/large.jpg";
+import LayouWhite from "../components/layoutWhite";
 
 export default function About() {
   return (
-    <div id="container" className="max-w-full">
+    <>
       <Helmet
         bodyAttributes={{
           class: "font-default leading-outer antialiased align-baseline",
@@ -15,69 +16,7 @@ export default function About() {
           rel="stylesheet"
         ></link>
       </Helmet>
-      <div className="flex flex-col md:flex-row">
-        <section
-          id="flag"
-          className="hidden md:overflow-hidden md:w-px10 md: md:block"
-        ></section>
-        <div
-          id="nav"
-          className="h-24 order-4 w-21/25 my-px20 mx-2/25 md:ml-px40 md:mr-px10 md:mt-px150 md:mb-px50 md:w-px100 md:min-w-px100 md:order-none md:h-auto"
-        >
-          <div
-            id="nav-inner"
-            className="mx-auto text-center w-auto md:overflow-auto md:top-px50 md:sticky md:w-px100 md:mx-0"
-          >
-            <nav className="inline-block font-helvetica text-nav font-bold text-right uppercase md:block md:text-block">
-              <ul className="list-none leading-navul mx-auto md:mx-0">
-                <li className="float-left leading-navli mx-px5 md:mt-0 md:mb-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="Home">
-                    △
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="Longform articles">
-                    Articles
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="Email newsletters I publish">
-                    Newsletters
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="Fragments (short articles)">
-                    Fragments
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="Photography">
-                    Photos
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="" title="What I'm doing now">
-                    Now
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#" title="About me &amp; this site">
-                    About
-                  </a>
-                </li>
-                <li className="float-left leading-navli mx-px5 md:my-px8 md:mx-0 md:float-none md:leading-none">
-                  <a href="#">
-                    <span title="Sitemap">☰</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <section
-          id="toc-index"
-          className="hidden lg:min-w-px100 lg:w-px100 lg:mx-px10 lg:mt-px150 lg:mb-px50 lg:block"
-        ></section>
+      <LayouWhite>
         <section
           id="content"
           className="mx-2/25 w-21/25 overflow-hidden flex-1 md:m-px50"
@@ -183,7 +122,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </div>
-    </div>
+      </LayouWhite>
+    </>
   );
 }
