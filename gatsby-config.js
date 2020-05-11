@@ -43,6 +43,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -95,6 +96,16 @@ module.exports = {
                 "list[ordered=false]": "my-px25 list-disc",
                 "list[ordered=true]": "my-px25 list-decimal",
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 550,
+              showCaptions: true,
             },
           },
           {

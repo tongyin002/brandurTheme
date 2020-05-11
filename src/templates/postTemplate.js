@@ -15,7 +15,6 @@ export default function BlogPost({ data }) {
   };
 
   const navExtraInfo = (props) => {
-    console.log(props);
     return (
       <ExtraInfo
         className="hidden font-helvetica text-nav leading-block text-right mr-px2 md:block"

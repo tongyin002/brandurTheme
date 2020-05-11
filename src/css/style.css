@@ -188,6 +188,20 @@ footnote definition style
   font-size: 0.65rem !important;
 }
 
+/*
+figure caption styling
+*/
+.gatsby-resp-image-figcaption {
+  left: 0;
+  text-align: center;
+  top: 0;
+  width: auto;
+  font: italic;
+  font-size: 0.85rem;
+  padding-top: 12px;
+  line-height: 1.5em;
+}
+
 @screen md {
   #signature-content article > p:first-of-type:first-letter {
     font-size: 6.25rem;
@@ -195,6 +209,18 @@ footnote definition style
 
   h1 {
     hyphens: none;
+  }
+}
+
+@screen lg {
+  .gatsby-resp-image-figure {
+    position: relative;
+  }
+  .gatsby-resp-image-figcaption {
+    position: absolute;
+    left: -120px;
+    width: 100px;
+    text-align: right;
   }
 }
 

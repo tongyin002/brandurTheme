@@ -14,7 +14,11 @@ export default function devPost({ title, content, toc }) {
       <div id="signature-content" className="max-w-px680">
         <div
           id="toc"
-          className="text-nav leading-title md:float-right md:ml-px30 md:w-px200"
+          className={
+            toc.length > 0
+              ? `text-nav leading-title md:float-right md:ml-px30 md:w-px200`
+              : "hidden"
+          }
         >
           <h2 className="font-helvetica text-block font-bold tracking-sstight my-px10 uppercase">
             Contents
