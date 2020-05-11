@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ResponsiveCtx } from "../contexts/responsiveCtx";
 
 const Menus = [
   {
@@ -44,21 +45,37 @@ const Menus = [
 ];
 
 export default function Nav() {
+  const { isResponsive, bgColorWhite } = useContext(ResponsiveCtx);
+
   return (
-    <nav className="inline-block font-helvetica text-nav font-bold text-right uppercase md:block md:text-block">
-      <ul className="list-none leading-navul mx-auto md:mx-0">
+    <nav
+      className={`inline-block font-helvetica text-nav font-bold text-right uppercase ${
+        isResponsive ? "md:block md:text-block" : ""
+      }`}
+    >
+      <ul
+        className={`list-none leading-navul mx-auto ${
+          isResponsive ? "md:mx-0" : ""
+        }`}
+      >
         {Menus.map((menu, index) => {
           return (
             <li
               key={menu.title}
-              className={`float-left leading-navli mx-px5 md:mb-px8 md:mx-0 md:float-none md:leading-none ${
-                index > 1 ? "md:mt-px8" : ""
+              className={`float-left leading-navli mx-px5 ${
+                isResponsive
+                  ? `md:mb-px8 md:mx-0 md:float-none md:leading-none ${
+                      index > 1 ? "md:mt-px8" : ""
+                    }`
+                  : ""
               }`}
             >
               <a
                 href={menu.link}
                 title={menu.title}
-                className="hvr-underline-from-center underline-black"
+                className={`hvr-underline-from-center ${
+                  bgColorWhite ? "underline-black" : ""
+                }`}
               >
                 {index == Menus.length - 1 ? (
                   <span title={menu.title}>{menu.value}</span>

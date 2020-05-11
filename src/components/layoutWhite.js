@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Nav from "./nav";
+import { ResponsiveCtx } from "../contexts/responsiveCtx";
 
 export default function LayoutWhite({ children, toc, extraInfo }) {
   return (
@@ -18,7 +19,11 @@ export default function LayoutWhite({ children, toc, extraInfo }) {
             id="nav-inner"
             className="mx-auto text-center w-auto md:overflow-auto md:top-px50 md:sticky md:w-px100 md:mx-0"
           >
-            <Nav />
+            <ResponsiveCtx.Provider
+              value={{ isResponsive: true, bgColorWhite: true }}
+            >
+              <Nav />
+            </ResponsiveCtx.Provider>
             {extraInfo}
           </div>
         </section>

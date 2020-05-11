@@ -2,6 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import indexImg from "../images/large.jpg";
 import indexImg2x from "../images/large@2x.jpg";
+import Nav from "../components/nav";
+import { ResponsiveCtx } from "../contexts/responsiveCtx";
 
 export default function Home() {
   return (
@@ -25,74 +27,11 @@ export default function Home() {
           id="nav-inner"
           className="max-w-none w-full overflow-auto top-px50"
         >
-          <nav className="inline-block font-helvetica text-nav font-bold text-right uppercase">
-            <ul className="list-none leading-navul mx-auto">
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Home" className="hvr-underline-from-center">
-                  △
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href="#"
-                  title="Longform articles"
-                  className="hvr-underline-from-center"
-                >
-                  Articles
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href="#"
-                  title="Email newsletters I publish"
-                  className="hvr-underline-from-center"
-                >
-                  Newsletters
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href="#"
-                  title="Fragments (short articles)"
-                  className="hvr-underline-from-center"
-                >
-                  Fragments
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href="#"
-                  title="Photography"
-                  className="hvr-underline-from-center"
-                >
-                  Photos
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href=""
-                  title="What I'm doing now"
-                  className="hvr-underline-from-center"
-                >
-                  Now
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a
-                  href="#"
-                  title="About me &amp; this site "
-                  className="hvr-underline-from-center"
-                >
-                  About
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" className="hvr-underline-from-center">
-                  <span title="Sitemap">☰</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <ResponsiveCtx.Provider
+            value={{ isResponsive: false, bgColorWhite: false }}
+          >
+            <Nav></Nav>
+          </ResponsiveCtx.Provider>
         </div>
       </div>
       <div
@@ -124,7 +63,7 @@ export default function Home() {
           <div id="writing" className="mx-3/50 md:mx-0">
             <div
               id="divider-short"
-              className="mx-auto my-px25 border-b border-divider w-4/5"
+              className="mx-auto my-px25 border-b border-gray-900 w-4/5"
             />
             <h1
               id="block"
@@ -211,7 +150,7 @@ export default function Home() {
             </p>
             <div
               id="divider-short"
-              className="mx-auto my-px25 border-b border-divider w-4/5"
+              className="mx-auto my-px25 border-b border-gray-900 w-4/5"
             />
             <h1
               id="block"
@@ -267,50 +206,11 @@ export default function Home() {
       </div>
       <div id="nav" className="h-24 order-4 w-21/25 my-px20 mx-2/25 md:hidden">
         <div id="nav-inner" className="mx-auto text-center w-auto">
-          <nav className="inline-block font-helvetica text-nav font-bold text-right uppercase">
-            <ul className="list-none leading-navul mx-auto">
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Home">
-                  △
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Longform articles">
-                  Articles
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Email newsletters I publish">
-                  Newsletters
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Fragments (short articles)">
-                  Fragments
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="Photography">
-                  Photos
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="" title="What I'm doing now">
-                  Now
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#" title="About me &amp; this site">
-                  About
-                </a>
-              </li>
-              <li className="float-left leading-navli mx-px5">
-                <a href="#">
-                  <span title="Sitemap">☰</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <ResponsiveCtx.Provider
+            value={{ isResponsive: false, bgColorWhite: false }}
+          >
+            <Nav></Nav>
+          </ResponsiveCtx.Provider>
         </div>
       </div>
     </div>
