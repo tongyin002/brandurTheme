@@ -11,6 +11,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-eslint`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -43,7 +45,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

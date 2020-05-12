@@ -29,9 +29,14 @@ module.exports = {
         px150: "150px",
         px100: "100px",
         px200: "200px",
+        px1150: "1150px",
       },
       width: {
         "21/25": "84%",
+      },
+      height: {
+        "8/10": "80%",
+        px760: "760px",
       },
       lineHeight: {
         firstLetter: "0.7em",
@@ -78,12 +83,17 @@ module.exports = {
         px680: "680px",
         px700: "700px",
         px1000: "1000px",
+        px1150: "1150px",
         px1500: "1500px",
         px1580: "1580px",
         xxl: "1920px",
       },
       minWidth: {
         px100: "100px",
+      },
+      minHeight: {
+        "8/10": "80%",
+        px700: "px700",
       },
       letterSpacing: {
         normal: "normal",

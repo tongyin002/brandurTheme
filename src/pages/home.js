@@ -1,10 +1,27 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import LayoutBlack from "../components/layoutBlack";
-import indexImg from "../images/large.jpg";
-import indexImg2x from "../images/large@2x.jpg";
+import DevPostGroup from "../components/devPostGroup";
+import FragmentGroup from "../components/fragmentGroup";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 export default function Home() {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allImageSharp {
+        edges {
+          node {
+            fluid(fit: COVER, quality: 100, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const photo = data.allImageSharp.edges[3].node.fluid;
   return (
     <>
       <Helmet
@@ -57,72 +74,7 @@ export default function Home() {
                 articles
               </h1>
               <ul className="mt-px10 mb-px25 list-none">
-                <li className="mb-px25">
-                  <p
-                    id="title"
-                    className="font-helvetica font-bold my-px10 leading-title"
-                  >
-                    <a href="#" className="hvr-underline-from-center ">
-                      Doubling the Sorting Speed of Postgres Network Types with
-                      Abbreviated Keys
-                    </a>
-                  </p>
-                  <p id="hook" className="leading-outer text-hook">
-                    Making the sorting speed of network types in Postgres twice
-                    as fast by designing SortSupport abbreviated keys compatible
-                    with their existing sort semantics.{" "}
-                    <span
-                      id="date"
-                      className="text-block italic mx-px3 text-date"
-                    >
-                      August&nbsp;7,&nbsp;2019
-                    </span>
-                  </p>
-                </li>
-                <li className="mb-px25">
-                  <p
-                    id="title"
-                    className="font-helvetica font-bold my-px10 leading-title"
-                  >
-                    <a href="#" className="hvr-underline-from-center ">
-                      Sequences: A Modest, Contra-garden Travel Project
-                    </a>
-                  </p>
-                  <p id="hook" className="leading-outer text-hook">
-                    In the spirit of the continued production of independent
-                    content, I&apos;m running a two-week photography and writing
-                    project in Berlin called{" "}
-                    <span className="italic">Sequences</span>
-                    {". "}
-                    <span
-                      id="date"
-                      className="text-block italic mx-px3 text-date"
-                    >
-                      June&nbsp;4,&nbsp;2019
-                    </span>
-                  </p>
-                </li>
-                <li className="mb-px25">
-                  <p
-                    id="title"
-                    className="font-helvetica font-bold my-px10 leading-title"
-                  >
-                    <a href="#" className="hvr-underline-from-center ">
-                      Building a Robust Live Reloader with WebSockets and Go
-                    </a>
-                  </p>
-                  <p id="hook" className="leading-outer text-hook">
-                    A walkthrough of the design of a live reload feature for the
-                    static site generator that builds this site, touching on
-                    fsnotify, WebSockets, and the curious case of file 4913.{" "}
-                    <span
-                      id="date"
-                      className="text-block italic mx-px3 text-date"
-                    >
-                      May&nbsp;28,&nbsp;2019
-                    </span>
-                  </p>
-                </li>
+                <DevPostGroup />
               </ul>
               <p id="older" className="my-px10 text-older text-date">
                 <em>
@@ -144,26 +96,7 @@ export default function Home() {
                 fragments
               </h1>
               <ul className="mt-px10 mb-px25 list-none">
-                <li className="mb-px25">
-                  <p
-                    id="title"
-                    className="font-helvetica font-bold my-px10 leading-title"
-                  >
-                    <a href="#" className="hvr-underline-from-center ">
-                      Development log: libjpeg / MozJPEG optimization shootout
-                    </a>
-                  </p>
-                  <p id="hook" className="leading-outer text-hook">
-                    Comparing the results of libjpeg and MozJPEG by optimizing
-                    the archive of image&apos;s from this very website.{" "}
-                    <span
-                      id="date"
-                      className="text-block italic mx-px3 text-date"
-                    >
-                      April&nbsp;15,&nbsp;2020
-                    </span>
-                  </p>
-                </li>
+                <FragmentGroup />
               </ul>
               <p id="older" className="my-px10 text-older text-date">
                 <em>
@@ -178,15 +111,13 @@ export default function Home() {
           </section>
           <section
             id="photo"
-            className="max-w-full overflow-auto flex-shrink-3 md:ml-px20 md:mr-px80 md:overflow-hidden md:max-w-px1500"
+            className="w-full flex-shrink-3 md:mr-px80 md:w-px1150 md:ml-px20 md:overflow-hidden"
           >
-            <a href="#">
-              <img
-                className="my-px20 w-full md:h-full md:object-cover"
-                src={indexImg}
-                srcSet={`${indexImg2x} 2x, ${indexImg} 1x`}
-              />
-            </a>
+            <Img
+              className="my-px20 md:h-px760"
+              fluid={photo}
+              alt="Gatsby Docs are awesome"
+            />
           </section>
         </div>
       </LayoutBlack>
