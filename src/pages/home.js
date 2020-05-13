@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import LayoutBlack from "../components/layoutBlack";
 import DevPostGroup from "../components/devPostGroup";
 import FragmentGroup from "../components/fragmentGroup";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from "gatsby-image";
 
 export default function Home() {
@@ -84,9 +84,12 @@ export default function Home() {
               <p id="older" className="my-px10 text-older text-date">
                 <em>
                   Older articles available{" "}
-                  <a href="#" className="text-white hvr-underline-to-center">
+                  <Link
+                    to="/dev-posts"
+                    className="text-white hvr-underline-to-center"
+                  >
                     here
-                  </a>
+                  </Link>
                   .
                 </em>
               </p>
@@ -106,9 +109,12 @@ export default function Home() {
               <p id="older" className="my-px10 text-older text-date">
                 <em>
                   Older fragments available{" "}
-                  <a href="#" className="text-white hvr-underline-to-center">
+                  <Link
+                    to="/fragments"
+                    className="text-white hvr-underline-to-center"
+                  >
                     here
-                  </a>
+                  </Link>
                   .
                 </em>
               </p>
@@ -121,7 +127,7 @@ export default function Home() {
             <Img
               className="my-px20 md:h-px760"
               fluid={photo}
-              alt="Gatsby Docs are awesome"
+              alt="cover photo"
             />
           </section>
         </div>
