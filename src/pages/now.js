@@ -4,9 +4,9 @@ import LayouWhite from "../components/layoutWhite";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 
-export default function About() {
+export default function Now() {
   const data = useStaticQuery(graphql`
-    query GetImage {
+    query GetNow {
       file(relativePath: { eq: "metaInfo/about.jpg" }) {
         childImageSharp {
           fluid(fit: COVER, quality: 100, webpQuality: 100) {
@@ -39,7 +39,7 @@ export default function About() {
           >
             <div id="title">
               <h1 className="mt-px20 mb-px30 font-helvetica font-normal text-title tracking-xtight leading-navul md:text-xtitle">
-                About
+                What I&apos;m Doing Now
               </h1>
             </div>
             <div id="about">

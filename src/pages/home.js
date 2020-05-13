@@ -8,12 +8,17 @@ import Img from "gatsby-image";
 
 export default function Home() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
-      allImageSharp {
-        edges {
-          node {
-            fluid(fit: COVER, quality: 100, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid
+    query GetPhotos {
+      allFile(filter: { relativeDirectory: { eq: "photos" } }) {
+        nodes {
+          childImageSharp {
+            fluid(
+              fit: COVER
+              webpQuality: 100
+              quality: 100
+              jpegQuality: 100
+            ) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -21,7 +26,7 @@ export default function Home() {
     }
   `);
 
-  const photo = data.allImageSharp.edges[3].node.fluid;
+  const photo = data.allFile.nodes[2].childImageSharp.fluid;
   return (
     <>
       <Helmet
@@ -38,7 +43,7 @@ export default function Home() {
       <LayoutBlack>
         <div
           id="flexcontainer-index"
-          className="flex flex-col justify-center mx-2/25 w-21/25 text-index leading-para max-w-xxl md:flex-row md:my-px60 md:mx-auto md:text-base md:leading-outer md:w-full"
+          className="flex flex-col justify-center mx-2/25 w-21/25 text-index leading-para max-w-xxl md:flex-row md:mt-px40 md:mb-px60 md:mx-auto md:text-base md:leading-outer md:w-full"
         >
           <section
             id="text"

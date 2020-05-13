@@ -1,46 +1,42 @@
 import React, { useContext } from "react";
 import { ResponsiveCtx } from "../contexts/responsiveCtx";
+import { Link } from "gatsby";
 
 const Menus = [
   {
     value: "△",
     title: "Home",
-    link: "#",
+    link: "/home",
   },
   {
     value: "Articles",
     title: "Longfrom articles",
-    link: "#",
-  },
-  {
-    value: "Newsletters",
-    title: "Email newsletters I publish",
-    link: "#",
+    link: "/dev-posts",
   },
   {
     value: "Fragments",
     title: "Fragments (short articles)",
-    link: "#",
+    link: "/fragments",
   },
   {
     value: "Photos",
     title: "Photography",
-    link: "#",
+    link: "/photos",
   },
   {
     value: "Now",
     title: "What I'm doing now",
-    link: "#",
+    link: "/now",
   },
   {
     value: "About",
     title: "About me &amp; this site",
-    link: "#",
+    link: "/aboutme",
   },
   {
     value: "☰",
     title: "Sitemap",
-    link: "#",
+    link: "/sitemap",
   },
 ];
 
@@ -70,8 +66,8 @@ export default function Nav() {
                   : ""
               }`}
             >
-              <a
-                href={menu.link}
+              <Link
+                to={menu.link}
                 title={menu.title}
                 className={`hvr-underline-from-center ${
                   bgColorWhite ? "underline-black" : ""
@@ -82,7 +78,7 @@ export default function Nav() {
                 ) : (
                   menu.value
                 )}
-              </a>
+              </Link>
             </li>
           );
         })}

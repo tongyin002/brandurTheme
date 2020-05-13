@@ -1,10 +1,28 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import indexImg from "../images/large.jpg";
-import indexImg2x from "../images/large@2x.jpg";
 import LayoutBlack from "../components/layoutBlack";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 export default function Photos() {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allFile(filter: { relativeDirectory: { eq: "photos" } }) {
+        nodes {
+          childImageSharp {
+            fluid(fit: COVER, webpQuality: 100, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const photos = data.allFile.nodes.map((node) => {
+    return node.childImageSharp.fluid;
+  });
+
   return (
     <>
       <Helmet
@@ -29,13 +47,11 @@ export default function Photos() {
             </h1>
             <ul className="list-none">
               <li className="max-w-px1500">
-                <a href="#">
-                  <img
-                    className="my-px10 w-full max-w-full md:my-px20"
-                    src={indexImg}
-                    srcSet={`${indexImg2x} 2x, ${indexImg} 1x`}
-                  />
-                </a>
+                {photos.map((fluid) => {
+                  return (
+                    <Img key={fluid.src} fluid={fluid} className="my-px10 md:my-px20"></Img>
+                  );
+                })}
               </li>
             </ul>
           </div>

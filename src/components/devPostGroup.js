@@ -9,7 +9,7 @@ export default function DevPostGroup() {
           allMarkdownRemark(
             filter: { fields: { slug: { regex: "^/dev-posts/" } } }
             sort: { order: DESC, fields: frontmatter___published_at }
-            limit: 3
+            limit: 2
           ) {
             nodes {
               frontmatter {

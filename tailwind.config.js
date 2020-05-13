@@ -41,6 +41,7 @@ module.exports = {
       lineHeight: {
         firstLetter: "0.7em",
         navul: "1em",
+        hook: "1.2em",
         block: "1.4em",
         title: "1.5em",
         info: "1.6em",
@@ -64,6 +65,7 @@ module.exports = {
         block: "0.7rem",
         older: "0.8rem",
         hook: "0.85rem",
+        articles: "0.9rem",
         strong: "0.95rem",
         mdtext: "1.04rem",
         head3: "1.1rem",
@@ -114,6 +116,9 @@ module.exports = {
       },
       listStyleType: {
         loalpha: "lower-alpha",
+      },
+      borderRadius: {
+        xl: "0.7rem",
       },
     },
   },
