@@ -6,10 +6,10 @@ const Menus = [
   {
     value: "△",
     title: "Home",
-    link: "/home",
+    link: "/",
   },
   {
-    value: "Articles",
+    value: "Dev-Posts",
     title: "Longfrom articles",
     link: "/dev-posts",
   },
@@ -31,7 +31,7 @@ const Menus = [
   {
     value: "About",
     title: "About me &amp; this site",
-    link: "/aboutme",
+    link: "/about",
   },
   {
     value: "☰",

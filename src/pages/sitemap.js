@@ -35,10 +35,10 @@ export default function SiteMap() {
                 <h2 className="font-helvetica font-semibold mb-px10 uppercase text-block">Core</h2>
                 <ul>
                   <li className="mb-px3">
-                    <Link to="/aboutme" className="hvr-underline-to-center underline-black">About</Link>
+                    <Link to="/about" className="hvr-underline-to-center underline-black">About</Link>
                   </li>
                   <li className="mb-px3">
-                    <Link to="/home" className="hvr-underline-to-center underline-black">Home</Link>
+                    <Link to="/" className="hvr-underline-to-center underline-black">Home</Link>
                   </li>
                   <li className="mb-px3">
                     <Link to="/now" className="hvr-underline-to-center underline-black">Now</Link>
@@ -52,7 +52,7 @@ export default function SiteMap() {
                 <h2 className="font-helvetica font-semibold mb-px10 uppercase text-block">Writings</h2>
                 <ul>
                   <li className="mb-px3">
-                    <Link to="/dev-posts" className="hvr-underline-to-center underline-black">Articles</Link>
+                    <Link to="/dev-posts" className="hvr-underline-to-center underline-black">Dev-Posts</Link>
                   </li>
                   <li className="mb-px3">
                     <Link to="/fragments" className="hvr-underline-to-center underline-black">Fragments</Link>

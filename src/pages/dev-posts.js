@@ -131,7 +131,7 @@ export default function DevPosts() {
           <div id="content-inner" className="max-w-full md:max-w-px550">
             <div id="title">
               <h1 className="text-title font-helvetica tracking-xtight leading-navul mt-px20 mb-px30 font-normal md:text-xtitle">
-                Articles
+                Dev-Posts
               </h1>
             </div>
             <div id="articles" className="text-articles">

@@ -8,7 +8,7 @@ export default function ExtraInfo({ className, isArticle, info }) {
       <div className="">
         <p className="mb-px20 leading-info">
           <strong className="text-xs font-helvetica not-italic">
-            {isArticle ? "Article" : "Fragment"}
+            {isArticle ? "Dev-Post" : "Fragment"}
           </strong>
           <br />
           {info.title}

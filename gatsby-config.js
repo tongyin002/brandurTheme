@@ -5,7 +5,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
   siteMetadata: {
-    title: `blog by tyin`,
+    title: `tyin's site`,
     description: `Personal website by tyin`,
     author: `@tyin`,
   },
@@ -30,7 +30,7 @@ module.exports = {
         background_color: fullConfig.theme.colors.white,
         theme_color: fullConfig.theme.colors.teal["400"],
         display: `minimal-ui`,
-        icon: `src/images/tailwind-icon.png`,
+        icon: `src/images/icon.png`,
       },
     },
     {
