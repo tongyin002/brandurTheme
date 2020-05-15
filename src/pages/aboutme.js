@@ -96,10 +96,9 @@ export default function About() {
               </h2>
               <p className="my-px20">
                 This site is a static set of HTML, JS, CSS, and image files
-                built using Gatsby.js, Tailwindcss, stored on Vercel for now and
-                might move to S3 if performance suffers. I do plan to use Circle
-                CI to automatically deploy the site once new posts land on the
-                master branch even though it doesn&apos;t need any tests to pass
+                built using Gatsby.js, Tailwindcss, stored on AWS amplify. I
+                don&apos;t plan to use any CI as amplify can automate deployment
+                from the repo plus it doesn&apos;t need any tests to pass
                 considering it is a static site.
               </p>
               <h2 className="text-2xl tracking-stight mt-px30 -mb-px10 font-helvetica font-normal">

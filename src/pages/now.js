@@ -44,88 +44,28 @@ export default function Now() {
             </div>
             <div id="about">
               <p className="my-px20">
+                It&apos;s 2020. What a year to be alive.
+              </p>
+              <p className="my-px20">
                 <Img fluid={data.file.childImageSharp.fluid}></Img>
               </p>
               <p className="my-px20">
-                I&apos;m an engineer at Stripe where I help design, build, and
-                run our API and maintain our public-facing developer tooling.
+                You only recognize this place if and only if you have been there
+                (disclaimer: it&apos;s on Oahu, Hwaii). The cost of reaching to
+                the top from the back of the moutain with no stairs on a muddy
+                raining day is memorable, not to mention playing hide and seek
+                with cops (literally, it&apos;s illegal to be there). For every
+                one of us, navigating life with COVID-19 is, for sure, far more
+                depressing and exhausting. But we will leap through this, we
+                will reach to the top, we will be able to enjoy the view, we
+                will get there.
               </p>
               <p className="my-px20">
-                I recently spent quite a few years at Heroku where I helped
-                create our V3 API and refine and operate its central supporting
-                services. I&apos;m still a strong believer that developers at
-                every product company shouldn&apos;t be spending too much time
-                thinking about infrastructure, and have access to a deployment
-                mechanism as easy as <code>git push heroku master</code>.
-              </p>
-              <p className="my-px20">
-                Having written software professionally for many years now,
-                I&apos;m convinced that the default result given our modern
-                processes and tools are products with undesirable levels of
-                fragility. These days I&apos;m especially interested in ways to
-                improve the robustness and longevity of software, and reduce
-                toil in operating it. I have little doubt that powerfully
-                type-safe languages which expose more problems at compile time
-                are the future. Though nascent today, I think that soon the most
-                pragmatic option will be Rust.
-              </p>
-              <p className="my-px20">
-                My favorite movie is Sofia Coppola&apos;s{" "}
-                <em>Lost in Translation</em>. My favorite book is Michael
-                Crichton&apos;s <em>Rising Sun</em> (although I like{" "}
-                <a href="#">a lot of others</a>). I also like running,
-                photography, history, meditation, urban design, and metal.
-              </p>
-              <p className="my-px20">
-                A few times a year I publish a newsletter called{" "}
-                <em>Passages &amp; Glass</em>. If you liked some of the other
-                content here, you should <a href="#">consider subscribing</a>.
-              </p>
-              <h2 className="text-2xl tracking-stight mt-px30 -mb-px10 font-helvetica font-normal">
-                Technology
-              </h2>
-              <p className="my-px20">
-                This site is a static set of HTML, JS, CSS, and image files
-                built using a{" "}
-                <a
-                  href="https://github.com/brandur/sorg"
-                  className="hvr-underline-to-center underline-black"
-                >
-                  custom Go executable
-                </a>
-                , stored on S3, and served by a number of worldwide edge
-                locations by CloudFront to help ensure great performance around
-                the globe. It&apos;s deployed automatically by CI as code lands
-                in its master branch on GitHub. The architecture is based on the
-                idea of{" "}
-                <a
-                  href="/aws-intrinsic-static"
-                  className="hvr-underline-to-center underline-black"
-                >
-                  the Intrinsic Static Site
-                </a>
-                .
-              </p>
-              <p className="my-px20">
-                It was previously running{" "}
-                <a href="https://github.com/brandur/org">Ruby/Sinatra stack</a>,
-                hosted on Heroku, and using CloudFlare as a CDN.
-              </p>
-              <h2 className="text-2xl tracking-stight mt-px30 -mb-px10 font-helvetica font-normal">
-                Design
-              </h2>
-              <p className="my-px20">
-                The responsive design aims to improve readability and emphasize
-                content through typography, whitespace, and clean lines compared{" "}
-                <a href="https://mutelight.org">
-                  to earlier incarnations of my work
-                </a>
-                . It wouldn&apos;t have been possible without the timeless
-                beauty of{" "}
-                <a href="http://en.wikipedia.org/wiki/Helvetica_(film)">
-                  Helvetica
-                </a>
-                .
+                There are still a couple of weeks before starting my full time
+                job after graduation. With stay at home policy, I&apos;m stuck
+                at home. But I will try to not waste a ton of it. A couple of
+                things I&apos;m working on: exercising every day, reviewing OS
+                and Network materials to pick up C again.
               </p>
             </div>
           </div>
