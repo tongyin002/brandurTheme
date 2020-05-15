@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export default function Now() {
   const data = useStaticQuery(graphql`
     query GetNow {
-      file(relativePath: { eq: "metaInfo/about.jpg" }) {
+      file(relativePath: { eq: "metaInfo/now.jpg" }) {
         childImageSharp {
           fluid(fit: COVER, quality: 100, webpQuality: 100) {
             ...GatsbyImageSharpFluid_withWebp

@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import LayouWhite from "../components/layoutWhite";
 import Img from "gatsby-image";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 export default function About() {
   const data = useStaticQuery(graphql`
@@ -47,85 +47,81 @@ export default function About() {
                 <Img fluid={data.file.childImageSharp.fluid}></Img>
               </p>
               <p className="my-px20">
-                I&apos;m an engineer at Stripe where I help design, build, and
-                run our API and maintain our public-facing developer tooling.
+                I&apos;m a grad student living in Santa Clara, CA. who is about
+                to graduate soon. Will hopefully be an engineer{" "}
+                <a
+                  href="https://quip.com/"
+                  className="hvr-underline-to-center underline-black"
+                >
+                  @Quip
+                </a>
+                . ( if I can get my EAD card on time : ) )
               </p>
               <p className="my-px20">
-                I recently spent quite a few years at Heroku where I helped
-                create our V3 API and refine and operate its central supporting
-                services. I&apos;m still a strong believer that developers at
-                every product company shouldn&apos;t be spending too much time
-                thinking about infrastructure, and have access to a deployment
-                mechanism as easy as <code>git push heroku master</code>.
+                I spent a year at Goldwind, a company specilizes designing and
+                building windturbines, working on their infrastructure,
+                upgrading CI/CD workflow. Spent a few months at Blend, a fintech
+                startup that builds platform for streamlining lending process.
+                Worked on their public API v3. Having just started my developer
+                career, I&apos;m eager to learn everything especially building
+                robust and pixel detailed systems.
               </p>
               <p className="my-px20">
-                Having written software professionally for many years now,
-                I&apos;m convinced that the default result given our modern
-                processes and tools are products with undesirable levels of
-                fragility. These days I&apos;m especially interested in ways to
-                improve the robustness and longevity of software, and reduce
-                toil in operating it. I have little doubt that powerfully
-                type-safe languages which expose more problems at compile time
-                are the future. Though nascent today, I think that soon the most
-                pragmatic option will be Rust.
+                I mainly document development and problm solving process in{" "}
+                <Link
+                  to="/dev-posts"
+                  className="hvr-underline-to-center underline-black"
+                >
+                  DEV-POSTS
+                </Link>
+                . Where in{" "}
+                <Link
+                  to="/fragments"
+                  className="hvr-underline-to-center underline-black"
+                >
+                  FRAGMENTS
+                </Link>
+                , I share about things I learned and interesting thoughts about
+                everything.
               </p>
               <p className="my-px20">
-                My favorite movie is Sofia Coppola&apos;s{" "}
-                <em>Lost in Translation</em>. My favorite book is Michael
-                Crichton&apos;s <em>Rising Sun</em> (although I like{" "}
-                <a href="#">a lot of others</a>). I also like running,
-                photography, history, meditation, urban design, and metal.
-              </p>
-              <p className="my-px20">
-                A few times a year I publish a newsletter called{" "}
-                <em>Passages &amp; Glass</em>. If you liked some of the other
-                content here, you should <a href="#">consider subscribing</a>.
+                My favorite movie and TV series are Hayao Miyazaki&apos;s{" "}
+                <em>Spirited Away</em> and Philipp Kadelbach&apos;s{" "}
+                <em>Generation War</em>. My favorite book is Keigo
+                Higashino&apos;s <em>トキオ</em>. I also like swimming, music,
+                history, politics and NBA.
               </p>
               <h2 className="text-2xl tracking-stight mt-px30 -mb-px10 font-helvetica font-normal">
                 Technology
               </h2>
               <p className="my-px20">
                 This site is a static set of HTML, JS, CSS, and image files
-                built using a{" "}
-                <a
-                  href="https://github.com/brandur/sorg"
-                  className="hvr-underline-to-center underline-black"
-                >
-                  custom Go executable
-                </a>
-                , stored on S3, and served by a number of worldwide edge
-                locations by CloudFront to help ensure great performance around
-                the globe. It&apos;s deployed automatically by CI as code lands
-                in its master branch on GitHub. The architecture is based on the
-                idea of{" "}
-                <a
-                  href="/aws-intrinsic-static"
-                  className="hvr-underline-to-center underline-black"
-                >
-                  the Intrinsic Static Site
-                </a>
-                .
-              </p>
-              <p className="my-px20">
-                It was previously running{" "}
-                <a href="https://github.com/brandur/org">Ruby/Sinatra stack</a>,
-                hosted on Heroku, and using CloudFlare as a CDN.
+                built using Gatsby.js, Tailwindcss, stored on Vercel for now and
+                might move to S3 if performance suffers. I do plan to use Circle
+                CI to automatically deploy the site once new posts land on the
+                master branch even though it doesn&apos;t need any tests to pass
+                considering it is a static site.
               </p>
               <h2 className="text-2xl tracking-stight mt-px30 -mb-px10 font-helvetica font-normal">
                 Design
               </h2>
               <p className="my-px20">
-                The responsive design aims to improve readability and emphasize
-                content through typography, whitespace, and clean lines compared{" "}
-                <a href="https://mutelight.org">
-                  to earlier incarnations of my work
+                Full credit to{" "}
+                <a
+                  href="https://twitter.com/brandur"
+                  className="hvr-underline-to-center underline-black"
+                >
+                  @brandur
                 </a>
-                . It wouldn&apos;t have been possible without the timeless
-                beauty of{" "}
-                <a href="http://en.wikipedia.org/wiki/Helvetica_(film)">
+                . After luring his site for a long time, I decided to implement
+                it from scratch. Just like he said,{" "}
+                <a
+                  href="http://en.wikipedia.org/wiki/Helvetica_(film)"
+                  className="hvr-underline-to-center underline-black"
+                >
                   Helvetica
-                </a>
-                .
+                </a>{" "}
+                is indeed a timeless beauty.
               </p>
             </div>
           </div>
