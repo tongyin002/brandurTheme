@@ -1,5 +1,5 @@
 {
-  "name": "personal site",
+  "name": "personal-site",
   "description": "personal site",
   "version": "1.0.0",
   "author": "Tong Yin",
@@ -64,9 +64,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
+    "url": "https://github.com/tongyin002/brandurTheme"
   },
   "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+    "url": "https://github.com/tongyin002/brandurTheme/issues"
   }
 }
