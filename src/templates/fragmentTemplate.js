@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import Writing from "./writing";
 import Fragment from "../components/fragment";
+import SEO from "../components/seo";
 
 export default function FragmentTemplate({ data }) {
   const post = data.markdownRemark;
@@ -14,16 +14,10 @@ export default function FragmentTemplate({ data }) {
 
   return (
     <>
-      <Helmet
-        bodyAttributes={{
-          class: "font-default leading-outer antialiased align-baseline",
-        }}
-      >
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Helmet>
+      <SEO
+        keywords={[`tong yin`, `web`, `salesforce`, `quip`]}
+        title="Fragment"
+      />
       <Writing post={post} isArticle={false}>
         <Fragment {...props}></Fragment>
       </Writing>

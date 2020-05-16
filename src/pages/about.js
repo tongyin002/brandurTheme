@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import SEO from "../components/seo";
 import LayouWhite from "../components/layoutWhite";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql, Link } from "gatsby";
@@ -18,17 +18,11 @@ export default function About() {
   `);
   return (
     <>
-      <Helmet
-        bodyAttributes={{
-          class: "font-default leading-outer antialiased align-baseline",
-        }}
-      >
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Helmet>
       <LayouWhite>
+        <SEO
+          keywords={[`tong yin`, `web`, `salesforce`, `quip`, `aboutme`]}
+          title="About"
+        />
         <section
           id="content"
           className="mx-2/25 w-21/25 overflow-hidden flex-1 md:m-px50"

@@ -1,6 +1,6 @@
 import React from "react";
 import LayoutWhite from "../components/layoutWhite";
-import { Helmet } from "react-helmet";
+import SEO from "../components/seo";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { groupBy, forEach } from "lodash";
 import PostPreview from "../components/postPreview";
@@ -112,34 +112,26 @@ export default function DevPosts() {
   }
 
   return (
-    <>
-      <Helmet
-        bodyAttributes={{
-          class: "font-default leading-outer antialiased align-baseline",
-        }}
+    <LayoutWhite toc={createToc(posts)}>
+      <SEO
+        keywords={[`tong yin`, `web`, `salesforce`, `quip`]}
+        title="Dev-Posts"
+      />
+      <section
+        id="content"
+        className="mx-2/25 w-21/25 overflow-hidden flex-1 md:m-px50"
       >
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Helmet>
-      <LayoutWhite toc={createToc(posts)}>
-        <section
-          id="content"
-          className="mx-2/25 w-21/25 overflow-hidden flex-1 md:m-px50"
-        >
-          <div id="content-inner" className="max-w-full md:max-w-px550">
-            <div id="title">
-              <h1 className="text-title font-helvetica tracking-xtight leading-navul mt-px20 mb-px30 font-normal md:text-xtitle">
-                Dev-Posts
-              </h1>
-            </div>
-            <div id="articles" className="text-articles">
-              {createTimeline(posts)}
-            </div>
+        <div id="content-inner" className="max-w-full md:max-w-px550">
+          <div id="title">
+            <h1 className="text-title font-helvetica tracking-xtight leading-navul mt-px20 mb-px30 font-normal md:text-xtitle">
+              Dev-Posts
+            </h1>
           </div>
-        </section>
-      </LayoutWhite>
-    </>
+          <div id="articles" className="text-articles">
+            {createTimeline(posts)}
+          </div>
+        </div>
+      </section>
+    </LayoutWhite>
   );
 }

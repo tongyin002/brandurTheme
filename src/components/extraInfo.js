@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function ExtraInfo({ className, isArticle, info }) {
   return (
-    <section id="info" className={className}>
+    <section className={`info ${className}`}>
       <div className="hidden md:block md:my-px30 md:border-b"></div>
       <div className="">
         <p className="mb-px20 leading-info">

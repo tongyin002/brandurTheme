@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, bodyAttr }) {
   const { site } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
@@ -17,6 +17,9 @@ function SEO({ description, lang, meta, keywords, title }) {
   `);
 
   const metaDescription = description || site.siteMetadata.description;
+  const bodyAttributes = bodyAttr || {
+    class: "font-default leading-outer antialiased align-baseline",
+  };
 
   return (
     <Helmet
@@ -68,7 +71,13 @@ function SEO({ description, lang, meta, keywords, title }) {
         .concat(meta)}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-    />
+      bodyAttributes={bodyAttributes}
+    >
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet"
+      ></link>
+    </Helmet>
   );
 }
 
@@ -84,6 +93,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   title: PropTypes.string.isRequired,
+  bodyAttr: PropTypes.object,
 };
 
 export default SEO;
