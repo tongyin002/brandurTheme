@@ -1,7 +1,6 @@
 /*! purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/*! purgecss end ignore */
 
 h1,
 h2,
@@ -171,4 +170,5 @@ figure caption styling
   }
 }
 
+/*! purgecss end ignore */
 @tailwind utilities;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../css/devPost.css";
+import "../css/devPost.module.css";
 
 export default function devPost({ title, content, toc }) {
   return (

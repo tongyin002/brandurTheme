@@ -17,7 +17,7 @@ export default function PostTemplate({ data }) {
     <>
       <SEO
         keywords={[`tong yin`, `web`, `salesforce`, `quip`]}
-        title="Deb-Post"
+        title="Dev-Post"
       />
       <Writing post={post} isArticle={true}>
         <DevPost {...props}></DevPost>

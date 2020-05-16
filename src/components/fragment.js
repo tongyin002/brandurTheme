@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../css/fragment.css";
+import "../css/fragment.module.css";
 
 export default function Fragment({ title, content }) {
   return (
